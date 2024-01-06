@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --primary_font: "Josefin Sans";
+  --white: #ffffff;
+  --black: #000000;
+  --navy_blue: #0d2857;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary_font);
+}
+
+/* Hero Start */
+
+#hero {
+  width: 100%;
+  height: 85vh;
+  background: url(../img/hero_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+}
+
+.nav-items ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.nav-items button {
+  border: none;
+  background-color: var(--white);
+  padding: 8px 35px 4px 35px;
+  color: var(--navy_blue);
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 50px;
+  border-radius: 9px;
+}
+
+#navOpen svg {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+#navClose svg {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 990px) {
+  .nav-items {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    display: block;
+    width: 100%;
+    background-color: #0d2857b1;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-items.active {
+    opacity: 1;
+    pointer-events: all;
+    user-select: auto;
+    top: 120px;
+  }
+
+  .nav-items ul {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .nav-items ul li {
+    margin-bottom: 40px;
+  }
+
+  .nav-items button {
+    margin-left: 0px;
+    margin-bottom: 50px;
+  }
+
+  #navOpen svg {
+    display: block;
+  }
+
+  #navClose svg {
+    position: absolute;
+    display: block;
+    right: 15px;
+    top: 15px;
+  }
+}
+
+.hero_content {
+  height: calc(85vh - 108px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero_content h1 {
+  font-size: 5em;
+  color: var(--white);
+}
+
+.hero_content p {
+  font-size: 1.4em;
+  color: var(--white);
+}
+
+@media screen and (max-width: 990px) {
+  .hero_content h1 {
+    font-size: 3.5em;
+  }
+
+  .hero_content p {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero_content h1 {
+    font-size: 2.6em;
+  }
+
+  .hero_content p {
+    font-size: 1.1em;
+  }
+}
+
+/* Hero End */
+
+/* Blog Start */
+
+#blog {
+  padding: 80px 0;
+}
+
+.blog_head h1 {
+  text-align: center;
+  font-size: 3em;
+  color: var(--navy_blue);
+  font-weight: 700;
+}
+
+.blog_head p {
+  text-align: center;
+  font-size: 1.1em;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.blog_card {
+  border: 1px solid rgba(1, 52, 184, 0.2);
+  background: var(--white);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  margin-top: 30px;
+}
+
+.blog_card:hover {
+  box-shadow: 5px 5px 15px 2px rgba(1, 52, 184, 0.11);
+}
+
+.blog_card .card_img {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+}
+
+.blog_card .card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_content {
+  padding: 20px;
+}
+
+.blog_card_title {
+  font-family: var(--primary_font);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.blog_card_date {
+  font-family: var(--primary_font);
+  color: var(--black);
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.blog_card_desc {
+  font-family: var(--primary_font);
+  color: var(--black);
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 990px) {
+  .blog_head h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* Blog End */
+
+/* Age Start */
+
+#ageCalc {
+  background: rgba(1, 52, 184, 0.04);
+  padding: 80px 0;
+}
+
+.age_head h1 {
+  text-align: center;
+  color: var(--navy_blue);
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.age_check {
+  border: 1px solid rgba(1, 52, 184, 0.2);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 30px 0;
+}
+
+.age_check h1 {
+  font-family: var(--primary_font);
+  font-size: 2em;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.age_check_input_box {
+  text-align: center;
+}
+
+.age_check_input_box input {
+  border: none;
+  outline: none;
+  background: rgba(1, 52, 184, 0.15);
+  height: 50px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  width: 250px;
+  margin: auto;
+  font-size: 1.2em;
+  padding: 0 15px;
+}
+
+.age_check_input_box button {
+  border: none;
+  outline: none;
+  background: var(--navy_blue);
+  font-family: var(--primary_font);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 0 20px;
+  font-size: 1.2em;
+  height: 50px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.age_card {
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--navy_blue);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-top: 50px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.age_card.active {
+  border: 1px solid transparent;
+}
+
+.age_card_shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+  z-index: -1;
+  display: none;
+  transition: 0.5s;
+}
+
+.age_card_shape img {
+  width: 100%;
+  height: 100%;
+  object-position: top right;
+}
+
+.age_card.active .age_card_shape {
+  display: block;
+}
+
+.age_card_img {
+  width: 160px;
+  height: 160px;
+  margin: 30px auto;
+}
+
+.age_card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.age_card h1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 990px) {
+  .age_check h1 {
+    font-size: 1.7em;
+  }
+
+  .age_head h1 {
+    font-size: 2.2em;
+  }
+
+  .age_check_input_box input {
+    width: 200px;
+    font-size: 1.1em;
+  }
+
+  .age_check_input_box button {
+    padding: 0 15px;
+    font-size: 1.2em;
+  }
+}
+
+/* Age End */
+
+/* Footer Start */
+
+#footer {
+  background-color: var(--navy_blue);
+  padding-top: 30px;
+}
+
+.footer_content {
+  margin-top: 50px;
+}
+
+.footer_logo img {
+  width: 180px;
+}
+
+.footer_desc {
+  max-width: 70%;
+  font-family: var(--primary_font);
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1em;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.footer_content h2 {
+  font-family: var(--primary_font);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.footer_content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer_content ul li {
+  margin: 20px 0;
+}
+
+.footer_content ul li:last-child {
+  margin: 0;
+}
+
+.footer_content ul a {
+  text-decoration: none;
+  font-family: var(--primary_font);
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.copyright p {
+  font-family: var(--primary_font);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid var(--white);
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 990px) {
+  .footer_desc {
+    max-width: 100%;
+  }
+}
+
+/* Footer End */
